@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to Bitly</h1>
+  <p>Hello, world!</p>
+
+  <form action="/urls" method="POST">
+    <label for="long_url"> Original URL: </label>
+    <input class="url_input" id ="long_url" type="text" name="long_url">
+    <input class="submit_button" type="submit" value="Shorten">
+  </form>
+
+  <tbody>
+    <% if @urls %> 
+      <% @urls.each do |url| %>
+        <p><%= url.long_url %></p>
+        <p><%= url.short_url %></p>
+      <% end %>
+    <% end %>
+  </tbody>
+</div>
+
